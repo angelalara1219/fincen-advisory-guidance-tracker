@@ -15,8 +15,8 @@ So I automated it. Once a week, a GitHub Action checks FinCEN's public pages, ad
 <!-- LATEST:START -->
 | Date | FinCEN No. | Title | SAR key term |
 |---|---|---|---|
-| 2026-10-30 | FIN-2026-Alert009 | [FinCEN Alert on Risks Associated with Foreign-Agent-Directed Transactions](https://www.fincen.gov/system/files/2026-10/FinCEN-Alert-Foreign-Agent-Directed-Transactions.pdf) | `FIN2026FOREIGNAGENT` |
 | 2026-10-30 | FIN-2026-NTC2 | [FinCEN Notice on the Use of Charities and Non-Profit Organizations for Illicit Activity](https://www.fincen.gov/system/files/2026-10/FinCEN-Notice-Illicit-Activity-Charities-Non-Profit-Org.pdf) | `FIN2026NPO` |
+| 2026-10-30 | FIN-2026-Alert009 | [FinCEN Alert on Risks Associated with Foreign-Agent-Directed Transactions](https://www.fincen.gov/system/files/2026-10/FinCEN-Alert-Foreign-Agent-Directed-Transactions.pdf) | `FIN2026FOREIGNAGENT` |
 | 2026-10-15 | FIN-2026-Alert008 | [FinCEN Alert to Counter Iranian Abuse of Religious Charity Networks](https://www.fincen.gov/system/files/2026-10/FinCEN-Alert-Iranian-Charity-Network-Abuse.pdf) | `FIN-2026-IRANCHARITYABUSE` |
 | 2026-10-01 | FIN-2026-Alert007 | [FinCEN Alert on the A7 Network](https://www.fincen.gov/system/files/2026-10/FinCEN-Alert-A7-Network.pdf) | `FIN-2026-A7NETWORK` |
 | 2026-09-08 | FIN-2026-Alert006 | [FinCEN Alert to Counter Iranian Procurement Efforts for its Commercial Aviation Industry](https://www.fincen.gov/system/files/2026-09/FinCEN-Alert-Iranian-Commercial-Aviation.pdf) | `FIN-2026-IRANAIR` |
