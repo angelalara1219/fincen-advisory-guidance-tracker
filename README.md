@@ -8,6 +8,8 @@ If you've worked a SAR queue, you know the drill. FinCEN drops a new alert, it a
 
 So I automated it. Once a week, a GitHub Action checks FinCEN's public pages, adds anything new to [`data/fincen_tracker.csv`](data/fincen_tracker.csv), and updates the table below. The commit history doubles as a dated record of when each item showed up.
 
+It also heads off a small but real filing problem. FinCEN uses these key terms to find SARs tied to an advisory, so a missing or mistyped term makes a good SAR harder to find. A current, searchable list makes the right term easy to grab.
+
 — Angela Lara, CAMS
 
 ## Latest from FinCEN
@@ -49,7 +51,14 @@ FinCEN SAR key terms ───┘        ▲
 2. It matches each item to its key term by FinCEN number, and appends anything it hasn't seen before. Existing rows are left alone, except to fill in a key term FinCEN posts later.
 3. [`.github/workflows/update.yml`](.github/workflows/update.yml) runs the tests, then the scraper, and commits only when something changed.
 
-If FinCEN redesigns its site and nothing parses, the run fails loudly instead of quietly wiping the data.
+### Data rules
+
+- **Append only.** New items are added; existing rows are never deleted or rewritten.
+- **`first_seen` never changes.** It records when the tracker first picked up an item, even if FinCEN edits the page later.
+- **One exception:** a blank key term gets filled in if FinCEN publishes it after the alert.
+- **Tests run first.** If a test fails, the scraper doesn't run and nothing is saved.
+- **Fails loudly.** If FinCEN redesigns its site and nothing parses, the run errors out instead of quietly saving an empty file.
+- **Every change is a commit,** so the full history of what was added and when is on GitHub.
 
 ## Run it yourself
 
